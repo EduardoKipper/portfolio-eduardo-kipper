@@ -1,15 +1,28 @@
 import styles from './ProjectsPage.module.css'
-import { Link } from 'react-router-dom'
+import { EmptyState, ProjectCard, SectionHeading } from '../../components'
+import { projects } from '../../data/projects'
 import routePaths from '../../routes/routePaths'
 
 function ProjectsPage() {
   return (
     <section className={styles.page} aria-labelledby="projects-title">
-      <h1 id="projects-title">Projetos</h1>
-      <p>[CONTEÚDO TEMPORÁRIO] Página de projetos em preparação.</p>
-      <Link to={`${routePaths.projects}/projeto-exemplo`}>
-        Ver projeto de exemplo
-      </Link>
+      <SectionHeading id="projects-title" level={1} title="Projetos" />
+      {projects.length > 0 ? (
+        <div className={styles.grid}>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              detailsHref={`${routePaths.projects}/${project.slug}`}
+            />
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          title="Nenhum projeto disponível"
+          description="Os projetos publicados aparecerão aqui."
+        />
+      )}
     </section>
   )
 }

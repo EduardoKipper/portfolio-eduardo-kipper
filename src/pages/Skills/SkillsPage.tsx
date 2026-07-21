@@ -1,10 +1,33 @@
 import styles from './SkillsPage.module.css'
+import { SectionHeading, SkillCard } from '../../components'
+import { skillCategories } from '../../data/skills'
 
 function SkillsPage() {
   return (
     <section className={styles.page} aria-labelledby="skills-title">
-      <h1 id="skills-title">Habilidades</h1>
-      <p>[CONTEÚDO TEMPORÁRIO] Página de habilidades em preparação.</p>
+      <SectionHeading id="skills-title" level={1} title="Habilidades" />
+      {skillCategories.map((category) => (
+        <section
+          className={styles.category}
+          key={category.slug}
+          aria-labelledby={`${category.slug}-title`}
+        >
+          <SectionHeading
+            id={`${category.slug}-title`}
+            level={2}
+            title={category.name}
+          />
+          <div className={styles.grid}>
+            {category.skills.map((skill) => (
+              <SkillCard
+                key={skill.slug}
+                skill={skill}
+                description="[CONTEÚDO TEMPORÁRIO] Descrição pendente de validação."
+              />
+            ))}
+          </div>
+        </section>
+      ))}
     </section>
   )
 }

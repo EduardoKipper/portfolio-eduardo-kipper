@@ -1,5 +1,6 @@
 import { ExternalLink, Mail } from 'lucide-react'
 import { profile } from '../../data/profile'
+import { SocialLink } from '../ui'
 import styles from './Footer.module.css'
 
 const socialLinks = [
@@ -21,10 +22,10 @@ function Footer() {
           <ul className={styles.linkList}>
             {socialLinks.map(({ label, href, ariaLabel, icon: Icon }) => (
               <li key={label}>
-                <a className={styles.link} href={href} aria-label={ariaLabel}>
-                  <Icon aria-hidden="true" size={20} strokeWidth={1.75} />
-                  <span>{label}</span>
-                </a>
+                <SocialLink
+                  link={{ label, href, ariaLabel }}
+                  icon={<Icon size={20} strokeWidth={1.75} />}
+                />
               </li>
             ))}
           </ul>
