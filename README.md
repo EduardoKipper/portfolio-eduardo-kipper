@@ -1,75 +1,125 @@
-# React + TypeScript + Vite
+# Portfólio — Eduardo Kipper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio profissional de Eduardo Kipper, criado para apresentar sua trajetória, competências, projetos e formas de contato em uma experiência web rápida, acessível e responsiva.
 
-Currently, two official plugins are available:
+O projeto está em fase inicial. A aplicação ainda mantém parte do conteúdo do template do Vite, e a identidade visual e as páginas definitivas serão desenvolvidas em etapas posteriores. Textos temporários devem ser identificados como placeholders e não representam informações profissionais finais.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias
 
-## React Compiler
+- React 19 para a interface;
+- TypeScript para tipagem estática;
+- Vite para desenvolvimento e build;
+- React Router para navegação entre páginas;
+- CSS Modules para estilos de componentes;
+- CSS global para reset, tokens e utilitários;
+- Lucide React para ícones;
+- ESLint para análise estática.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Requisitos
 
-## Expanding the ESLint configuration
+- Node.js compatível com o Vite 8;
+- npm (o repositório inclui `package-lock.json`).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Comandos disponíveis
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Comando | Finalidade |
+| --- | --- |
+| `npm install` | Instala as dependências do projeto. |
+| `npm run dev` | Inicia o servidor local do Vite com atualização automática. |
+| `npm run lint` | Executa o ESLint em todo o projeto. |
+| `npm run build` | Valida o TypeScript e gera a versão de produção em `dist/`. |
+| `npm run preview` | Serve localmente o build existente para conferência. |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Estrutura de pastas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Estrutura atual relevante:
 
+```text
+portfolio-eduardo-kipper/
+├── docs/
+│   ├── architecture.md       # decisões e direção arquitetural
+│   └── references/           # referências visuais fornecidas (não editar)
+├── public/
+│   ├── documents/            # documentos públicos fornecidos
+│   └── images/               # imagens públicas fornecidas
+├── src/
+│   ├── assets/               # arquivos importados pelo código-fonte
+│   ├── App.tsx               # componente raiz atual
+│   ├── App.css               # estilos do template atual
+│   ├── index.css             # estilos globais atuais
+│   └── main.tsx              # ponto de entrada da aplicação
+├── AGENTS.md                 # regras para contribuições assistidas
+├── package.json              # dependências e scripts
+└── vite.config.ts            # configuração do Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+A evolução sugerida para `src/` está detalhada em [`docs/architecture.md`](docs/architecture.md). As pastas propostas devem ser criadas à medida que houver código real para elas, sem antecipar abstrações vazias.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Desenvolvimento local
 
-export default defineConfig([
-  globalIgnores(['dist']),
+1. Clone o repositório e acesse sua pasta.
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicie o ambiente de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Abra o endereço exibido pelo Vite no terminal.
+
+Antes de concluir uma alteração, execute:
+
+```bash
+npm run lint
+npm run build
+```
+
+Não altere arquivos de referência, documentos ou imagens fornecidos. Novos assets devem ter nomes descritivos e ser adicionados somente quando necessários.
+
+## Build de produção
+
+Gere os arquivos otimizados com:
+
+```bash
+npm run build
+```
+
+O resultado será salvo em `dist/`. Para validá-lo localmente:
+
+```bash
+npm run preview
+```
+
+Como a navegação será controlada pelo React Router, a hospedagem deverá redirecionar rotas desconhecidas para `index.html` quando forem adotadas URLs do tipo SPA.
+
+## Como inserir projetos e informações profissionais
+
+Os conteúdos definitivos devem ser confirmados com Eduardo antes da publicação. Não deduza clientes, cargos, datas, resultados, links ou competências a partir das referências visuais.
+
+Na implementação da camada de dados:
+
+1. mantenha projetos, experiências, competências, contatos e dados de perfil em módulos tipados dentro de `src/data/`;
+2. defina os contratos TypeScript correspondentes em `src/types/` ou junto ao domínio quando forem usados por uma única área;
+3. adicione um identificador estável (`slug`) a cada projeto para sua URL de detalhes;
+4. associe imagens por caminhos existentes e escreva textos alternativos úteis;
+5. marque conteúdo ainda não aprovado com um rótulo inequívoco, como `[CONTEÚDO TEMPORÁRIO]`;
+6. mantenha o currículo público em `public/documents/` e atualize seus links na camada de dados, sem editar o arquivo fornecido;
+7. valide links externos, datas e ortografia antes do build final.
+
+Exemplo apenas estrutural, sem conteúdo profissional definitivo:
+
+```ts
+export const projects = [
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+    slug: 'projeto-temporario',
+    title: '[CONTEÚDO TEMPORÁRIO] Nome do projeto',
+    summary: '[CONTEÚDO TEMPORÁRIO] Breve descrição.',
+    technologies: ['[TECNOLOGIA A CONFIRMAR]'],
   },
-])
-
+]
 ```
