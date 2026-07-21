@@ -95,7 +95,16 @@ O resultado será salvo em `dist/`. Para validá-lo localmente:
 npm run preview
 ```
 
-Como a navegação será controlada pelo React Router, a hospedagem deverá redirecionar rotas desconhecidas para `index.html` quando forem adotadas URLs do tipo SPA.
+Como a navegação usa `HashRouter`, as rotas internas ficam após `#` na URL e continuam funcionando no GitHub Pages mesmo quando a página é atualizada diretamente.
+
+## Deploy no GitHub Pages
+
+O projeto é publicado automaticamente pelo workflow do GitHub Actions. Antes do primeiro deploy, acesse **Settings → Pages** no repositório e selecione **GitHub Actions** como fonte de publicação.
+
+- Um push na branch `main` dispara o lint, o build de produção e o deploy.
+- A URL esperada é `https://eduardokipper.github.io/portfolio-eduardo-kipper/`.
+- Para executar manualmente, abra a aba **Actions**, selecione o workflow **Deploy to GitHub Pages**, clique em **Run workflow** e escolha a branch `main`.
+- Em caso de falha, abra a execução correspondente na aba **Actions** e consulte o log da etapa que falhou, especialmente instalação, lint, build, upload do artifact ou deploy.
 
 ## Como inserir projetos e informações profissionais
 

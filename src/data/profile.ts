@@ -7,9 +7,9 @@ export const profile: Profile = {
   summary:
     'Profissional de tecnologia com experiência em desenvolvimento full stack, automação de processos e análise de dados financeiros.',
   location: 'Florianópolis - SC',
-  imagePath: '/images/profile/eduardo-kipper.jpg',
+  imagePath: `${import.meta.env.BASE_URL}images/profile/eduardo-kipper.jpg`,
   imageAlt: 'Eduardo Kipper',
-  resumePath: '/documents/curriculo-eduardo-kipper-full-stack.pdf',
+  resumePath: `${import.meta.env.BASE_URL}documents/curriculo-eduardo-kipper-full-stack.pdf`,
   email: {
     label: 'E-mail',
     href: 'mailto:eduardo.k.rubio@gmail.com',

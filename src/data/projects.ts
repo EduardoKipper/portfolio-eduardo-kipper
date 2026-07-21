@@ -19,7 +19,7 @@ export const projects = [
       'Docker',
     ],
     // TODO: Substituir pelo caminho da imagem aprovada para o projeto.
-    imagePath: '/images/projects/sistema-interno-placeholder.webp',
+    imagePath: `${import.meta.env.BASE_URL}images/projects/sistema-interno-placeholder.webp`,
     imageAlt: 'Imagem provisória do sistema interno de arquivos e comunicação',
     featured: true,
     // TODO: Confirmar o status de publicação do projeto.
@@ -34,7 +34,7 @@ export const projects = [
       'Registro de exemplo baseado em uma automação descrita no currículo, com economia informada de 16 horas semanais para a equipe financeira.',
     technologies: ['Python', 'Integração de dados', 'Automação de processos'],
     // TODO: Substituir pelo caminho da imagem aprovada para o projeto.
-    imagePath: '/images/projects/automacao-hotelbeds-placeholder.webp',
+    imagePath: `${import.meta.env.BASE_URL}images/projects/automacao-hotelbeds-placeholder.webp`,
     imageAlt: 'Imagem provisória da automação Hotelbeds',
     featured: false,
     // TODO: Confirmar o status de publicação do projeto.
