@@ -1,6 +1,7 @@
 import styles from './SkillsPage.module.css'
 import { SectionHeading, SkillCard } from '../../components'
 import { skillCategories } from '../../data/skills'
+import { profile } from '../../data/profile'
 
 function SkillsPage() {
   return (
@@ -28,6 +29,18 @@ function SkillsPage() {
           </div>
         </section>
       ))}
+      <section className={styles.highlights} aria-labelledby="professional-highlights-title">
+        <SectionHeading
+          id="professional-highlights-title"
+          level={2}
+          title="Diferenciais profissionais"
+        />
+        <ul>
+          {profile.professionalHighlights.map((highlight) => (
+            <li key={highlight}>{highlight}</li>
+          ))}
+        </ul>
+      </section>
     </section>
   )
 }

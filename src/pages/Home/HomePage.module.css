@@ -1,3 +1,66 @@
+.page,
+.section,
+.hero,
+.contact {
+  display: grid;
+  gap: var(--space-5);
+}
+
 .page {
-  padding: var(--space-page);
+  gap: var(--space-section);
+  padding-block: var(--space-7) var(--space-8);
+}
+
+.hero {
+  max-width: 52rem;
+  padding-block: var(--space-7);
+}
+
+.eyebrow,
+.role {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero h1 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+}
+
+.summary {
+  max-width: 62ch;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.actions,
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tags {
+  padding: 0;
+  list-style: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-5);
+}
+
+.contact {
+  justify-items: start;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+@media (max-width: 30rem) {
+  .actions > * {
+    width: 100%;
+  }
 }

@@ -5,13 +5,6 @@
   background-color: var(--color-surface);
 }
 
-.image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background-color: var(--color-surface-elevated);
-}
-
 .content {
   display: grid;
   justify-items: start;

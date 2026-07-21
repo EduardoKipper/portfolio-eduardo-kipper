@@ -1,3 +1,53 @@
+.page,
+.header,
+.section {
+  display: grid;
+  gap: var(--space-4);
+}
+
 .page {
-  padding: var(--space-page);
+  gap: var(--space-7);
+  padding-block: var(--space-7);
+}
+
+.header {
+  max-width: 60rem;
+}
+
+.header h1 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+}
+
+.header p,
+.section p,
+.section li {
+  color: var(--color-text-secondary);
+}
+
+.eyebrow {
+  color: var(--color-accent) !important;
+  font-weight: var(--font-weight-semibold);
+}
+
+.media {
+  overflow: hidden;
+  max-width: 56rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.tags,
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.section ul:not(.tags) {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-5);
 }

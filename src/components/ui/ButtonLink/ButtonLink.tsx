@@ -13,7 +13,7 @@ type ButtonLinkBaseProps = {
 
 type ButtonLinkProps =
   | (ButtonLinkBaseProps & { to: To; href?: never })
-  | (ButtonLinkBaseProps & { href: string; to?: never })
+  | (ButtonLinkBaseProps & { download?: boolean; href: string; to?: never })
 
 function ButtonLink(props: ButtonLinkProps) {
   const { children, className, icon, variant = 'primary' } = props
@@ -40,6 +40,7 @@ function ButtonLink(props: ButtonLinkProps) {
   return (
     <a
       className={classNames}
+      download={props.download}
       href={props.href}
       rel={opensNewTab ? 'noopener noreferrer' : undefined}
       target={opensNewTab ? '_blank' : undefined}

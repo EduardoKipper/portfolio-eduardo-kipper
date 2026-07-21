@@ -54,3 +54,15 @@ a:hover {
     scroll-behavior: auto;
   }
 }
+
+@media print {
+  body {
+    color: #111;
+    background: #fff;
+  }
+
+  body > #root > div > header,
+  body > #root > div > footer {
+    display: none;
+  }
+}

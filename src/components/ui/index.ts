@@ -1,6 +1,7 @@
 export * from './ButtonLink'
 export * from './EmptyState'
 export * from './ProjectCard'
+export * from './ProjectMedia'
 export * from './SectionHeading'
 export * from './SkillCard'
 export * from './SocialLink'

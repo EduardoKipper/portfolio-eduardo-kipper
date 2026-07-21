@@ -16,6 +16,10 @@ export type Profile = {
   email: SocialLink
   github: SocialLink
   linkedin: SocialLink
+  mainTechnologies: readonly string[]
+  professionalCharacteristics: readonly string[]
+  professionalHighlights: readonly string[]
+  interests: readonly string[]
 }
 
 export type Skill = {
@@ -67,6 +71,9 @@ export type Project = {
   links?: readonly ProjectLink[]
   featured: boolean
   status: ProjectStatus
+  challenge?: string
+  solution?: string
+  features?: readonly string[]
 }
 
 export type Education = {

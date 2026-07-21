@@ -1,6 +1,6 @@
 import type { Course } from '../types'
 
-export const courses = [
+export const courses: readonly Course[] = [
   {
     id: 'alura-tech-lead',
     title: 'Tech Lead',
@@ -16,4 +16,4 @@ export const courses = [
     title: 'Front-end',
     institution: 'Alura',
   },
-] satisfies readonly Course[]
+]

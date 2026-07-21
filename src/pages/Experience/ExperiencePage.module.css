@@ -1,3 +1,59 @@
+.page,
+.section {
+  display: grid;
+  gap: var(--space-7);
+}
+
 .page {
-  padding: var(--space-page);
+  padding-block: var(--space-7);
+}
+
+.timeline {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-5) 0 0 var(--space-5);
+  border-left: 2px solid var(--color-border);
+  list-style: none;
+}
+
+.timelineItem,
+.card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.period,
+.company {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.timelineItem > p:not(.period, .company),
+.card p,
+.achievements {
+  color: var(--color-text-secondary);
+}
+
+.achievements {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-5);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-4);
 }

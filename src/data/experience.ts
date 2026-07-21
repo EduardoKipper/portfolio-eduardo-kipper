@@ -1,6 +1,6 @@
 import type { Experience } from '../types'
 
-export const experiences = [
+export const experiences: readonly Experience[] = [
   {
     id: 'rede-andrade-analista-financeiro-tech-lead',
     company: 'Rede Andrade',
@@ -28,4 +28,4 @@ export const experiences = [
       'Power BI',
     ],
   },
-] satisfies readonly Experience[]
+]

@@ -1,3 +1,41 @@
+.page,
+.section,
+.introduction,
+.introduction section {
+  display: grid;
+  gap: var(--space-5);
+}
+
 .page {
-  padding: var(--space-page);
+  gap: var(--space-7);
+  padding-block: var(--space-7);
+}
+
+.introduction {
+  align-items: center;
+}
+
+.profileImage {
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.introduction p,
+.section li {
+  color: var(--color-text-secondary);
+}
+
+.section ul {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+}
+
+@media (min-width: 48rem) {
+  .introduction {
+    grid-template-columns: minmax(16rem, 0.75fr) 1.25fr;
+    gap: var(--space-7);
+  }
 }
