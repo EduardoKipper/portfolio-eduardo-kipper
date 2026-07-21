@@ -9,6 +9,10 @@
   --color-text-secondary: #a6afbd;
   --color-border: #263247;
   --color-focus: #ff9b52;
+  --color-print-background: #fff;
+  --color-print-text: #111;
+  --color-print-text-secondary: #222;
+  --color-print-border: #bbb;
 
   /* Tipografia */
   --font-family-base: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;

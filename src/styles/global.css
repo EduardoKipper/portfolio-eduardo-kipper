@@ -57,12 +57,17 @@ a:hover {
 
 @media print {
   body {
-    color: #111;
-    background: #fff;
+    color: var(--color-print-text);
+    background: var(--color-print-background);
   }
 
   body > #root > div > header,
   body > #root > div > footer {
     display: none;
+  }
+
+  #main-content {
+    max-width: none;
+    padding: 0;
   }
 }

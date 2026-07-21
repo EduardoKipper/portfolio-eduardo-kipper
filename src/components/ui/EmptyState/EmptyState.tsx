@@ -9,7 +9,7 @@ type EmptyStateProps = {
 
 function EmptyState({ action, description, title }: EmptyStateProps) {
   return (
-    <div className={styles.emptyState} role="status">
+    <div className={styles.emptyState}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
       {action ? <div className={styles.action}>{action}</div> : null}

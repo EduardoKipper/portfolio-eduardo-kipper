@@ -49,7 +49,7 @@
   .page {
     gap: 1.25rem;
     padding: 0;
-    color: #111;
+    color: var(--color-print-text);
   }
 
   .download {
@@ -74,6 +74,6 @@
   .page li,
   .page section > p,
   .page a {
-    color: #222;
+    color: var(--color-print-text-secondary);
   }
 }

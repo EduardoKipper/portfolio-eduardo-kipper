@@ -8,3 +8,11 @@
   background-color: var(--color-surface);
   font-size: var(--font-size-sm);
 }
+
+@media print {
+  .tag {
+    border-color: var(--color-print-border);
+    color: var(--color-print-text-secondary);
+    background-color: transparent;
+  }
+}
