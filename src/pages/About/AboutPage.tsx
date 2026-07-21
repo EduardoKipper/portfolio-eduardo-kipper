@@ -2,10 +2,10 @@ import styles from './AboutPage.module.css'
 
 function AboutPage() {
   return (
-    <main className={styles.page}>
-      <h1>Sobre</h1>
+    <section className={styles.page} aria-labelledby="about-title">
+      <h1 id="about-title">Sobre</h1>
       <p>[CONTEÚDO TEMPORÁRIO] Página sobre em preparação.</p>
-    </main>
+    </section>
   )
 }
 

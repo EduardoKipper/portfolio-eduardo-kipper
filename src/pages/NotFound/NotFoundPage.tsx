@@ -1,11 +1,14 @@
+import { Link } from 'react-router-dom'
+import routePaths from '../../routes/routePaths'
 import styles from './NotFoundPage.module.css'
 
 function NotFoundPage() {
   return (
-    <main className={styles.page}>
-      <h1>Não encontrado</h1>
+    <section className={styles.page} aria-labelledby="not-found-title">
+      <h1 id="not-found-title">Não encontrado</h1>
       <p>[CONTEÚDO TEMPORÁRIO] Página não encontrada.</p>
-    </main>
+      <Link to={routePaths.home}>Voltar para a Home</Link>
+    </section>
   )
 }
 

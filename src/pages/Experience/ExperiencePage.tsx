@@ -2,10 +2,10 @@ import styles from './ExperiencePage.module.css'
 
 function ExperiencePage() {
   return (
-    <main className={styles.page}>
-      <h1>Experiência</h1>
+    <section className={styles.page} aria-labelledby="experience-title">
+      <h1 id="experience-title">Experiência</h1>
       <p>[CONTEÚDO TEMPORÁRIO] Página de experiência em preparação.</p>
-    </main>
+    </section>
   )
 }
 

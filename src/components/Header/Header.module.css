@@ -1,0 +1,35 @@
+.header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.navigation {
+  max-width: var(--container-max-width);
+  padding: var(--space-4) var(--container-padding);
+  margin-inline: auto;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.link:hover,
+.active {
+  color: var(--color-accent);
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.35em;
+}
