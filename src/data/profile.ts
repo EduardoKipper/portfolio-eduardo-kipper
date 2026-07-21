@@ -1,35 +1,28 @@
-const temporaryContent = '[CONTEÚDO TEMPORÁRIO]'
-
-type ProfileLink = {
-  label: string
-  href: string
-}
-
-type Profile = {
-  name: string
-  role: string
-  email: ProfileLink
-  github: ProfileLink
-  linkedin: ProfileLink
-  location: string
-  resumePath: string
-}
+import type { Profile } from '../types'
 
 export const profile: Profile = {
   name: 'Eduardo Kipper',
-  role: `${temporaryContent} Cargo a confirmar`,
+  fullName: 'Eduardo Kipper Della Santa Rubio',
+  role: 'Desenvolvedor Full Stack',
+  summary:
+    'Profissional de tecnologia com experiência em desenvolvimento full stack, automação de processos e análise de dados financeiros.',
+  location: 'Florianópolis - SC',
+  imagePath: '/images/profile/eduardo-kipper.jpg',
+  imageAlt: 'Eduardo Kipper',
+  resumePath: '/documents/curriculo-eduardo-kipper-full-stack.pdf',
   email: {
-    label: `${temporaryContent} E-mail a confirmar`,
-    href: 'mailto:contato@example.com',
+    label: 'E-mail',
+    href: 'mailto:eduardo.k.rubio@gmail.com',
+    ariaLabel: 'Enviar e-mail para Eduardo Kipper',
   },
   github: {
-    label: `${temporaryContent} GitHub a confirmar`,
-    href: 'https://github.com/',
+    label: 'GitHub',
+    href: 'https://github.com/EduardoKipper',
+    ariaLabel: 'Perfil de Eduardo Kipper no GitHub',
   },
   linkedin: {
-    label: `${temporaryContent} LinkedIn a confirmar`,
-    href: 'https://www.linkedin.com/',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/eduardo-kipper',
+    ariaLabel: 'Perfil de Eduardo Kipper no LinkedIn',
   },
-  location: `${temporaryContent} Localização a confirmar`,
-  resumePath: '/documents/curriculo-eduardo-kipper-full-stack.pdf',
 }
