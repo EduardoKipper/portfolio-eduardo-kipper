@@ -1,0 +1,6 @@
+:root {
+  --color-background: #ffffff;
+  --color-text: #1f2937;
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --space-page: 2rem;
+}
