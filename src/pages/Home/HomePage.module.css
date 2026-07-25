@@ -1,66 +1,226 @@
-.page,
-.section,
-.hero,
-.contact {
-  display: grid;
-  gap: var(--space-5);
-}
-
 .page {
-  gap: var(--space-section);
-  padding-block: var(--space-7) var(--space-8);
+  position: relative;
+  left: 50%;
+  display: grid;
+  width: min(calc(100vw - (2 * var(--container-padding))), 82rem);
+  max-width: none;
+  gap: 0;
+  padding-block-end: var(--space-8);
+  margin-block-start: calc(-1 * var(--space-page));
+  transform: translateX(-50%);
 }
 
 .hero {
-  max-width: 52rem;
-  padding-block: var(--space-7);
+  display: grid;
+  min-height: 31.5rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(28rem, 1.05fr);
+  overflow: hidden;
 }
 
-.eyebrow,
-.role {
+.heroContent {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  padding-block: var(--space-7) var(--space-6);
+}
+
+.eyebrow {
+  margin-block-end: var(--space-2);
   color: var(--color-accent);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
 }
 
-.hero h1 {
-  font-size: var(--font-size-2xl);
+.title {
+  max-width: 12ch;
+  font-size: clamp(3rem, 5.3vw, 4.5rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.title span {
+  color: var(--color-accent);
+}
+
+.role {
+  margin-block-start: var(--space-2);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
 }
 
 .summary {
-  max-width: 62ch;
+  max-width: 34rem;
+  margin-block-start: var(--space-4);
   color: var(--color-text-secondary);
   font-size: var(--font-size-lg);
+  line-height: 1.55;
 }
 
-.actions,
-.tags {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+  margin-block-start: var(--space-5);
 }
 
-.tags {
-  padding: 0;
-  list-style: none;
+.contactButton {
+  border-color: var(--color-accent);
+  background-color: transparent;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-  gap: var(--space-5);
+.heroVisual {
+  position: relative;
+  min-width: 0;
+  min-height: 100%;
+}
+
+.heroVisual::before,
+.heroVisual::after {
+  position: absolute;
+  z-index: 2;
+  content: '';
+  pointer-events: none;
+}
+
+.heroVisual::before {
+  right: -2.5rem;
+  bottom: 3.5rem;
+  width: 10rem;
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 122 26 / 18%);
+  border-radius: 50%;
+  background: rgb(255 122 26 / 7%);
+}
+
+.heroVisual::after {
+  top: 3.25rem;
+  right: 1.75rem;
+  width: 4.75rem;
+  height: 3.5rem;
+  opacity: 0.45;
+  background-image: radial-gradient(
+    circle,
+    var(--color-accent) 0 1.25px,
+    transparent 1.5px
+  );
+  background-size: 1rem 1rem;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 67% center;
 }
 
 .contact {
+  display: grid;
   justify-items: start;
+  gap: var(--space-5);
   padding: var(--space-6);
+  margin-block-start: var(--space-section);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background-color: var(--color-surface);
 }
 
+@media (max-width: 64rem) {
+  .hero {
+    min-height: 29rem;
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.85fr);
+  }
+
+  .title {
+    font-size: clamp(2.8rem, 6vw, 3.75rem);
+  }
+
+  .summary {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 48rem) {
+  .page {
+    width: min(calc(100vw - (2 * var(--container-padding))), 42rem);
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroContent {
+    padding-block: var(--space-6);
+  }
+
+  .heroVisual {
+    min-height: 24rem;
+  }
+
+  .heroImage {
+    object-position: 70% center;
+  }
+}
+
 @media (max-width: 30rem) {
+  .page {
+    width: calc(100vw - (2 * var(--space-4)));
+  }
+
+  .heroContent {
+    padding-block-start: var(--space-5);
+  }
+
+  .eyebrow {
+    font-size: var(--font-size-md);
+  }
+
+  .title {
+    max-width: 10ch;
+    font-size: clamp(2.65rem, 13vw, 3.35rem);
+  }
+
+  .role {
+    font-size: 1.25rem;
+  }
+
+  .actions,
   .actions > * {
     width: 100%;
+  }
+
+  .heroVisual {
+    min-height: 14rem;
+  }
+
+  .heroVisual::before {
+    inset: 0;
+    width: auto;
+    aspect-ratio: auto;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--color-background) 0%,
+      rgb(7 13 24 / 72%) 12%,
+      transparent 38%
+    );
+  }
+
+  .heroVisual::after {
+    display: none;
+  }
+
+  .heroImage {
+    object-position: 72% 18%;
+  }
+
+  .contact {
+    padding: var(--space-5);
   }
 }

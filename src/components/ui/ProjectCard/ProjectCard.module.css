@@ -34,3 +34,49 @@
   padding: 0;
   list-style: none;
 }
+
+.compact {
+  display: flex;
+  flex-direction: column;
+}
+
+.compact .content {
+  flex: 1;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.compact .status {
+  font-size: var(--font-size-xs);
+}
+
+.compact .title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 1.125rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.compact .description {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.compact .tags {
+  gap: var(--space-1);
+}
+
+.compact .tags span {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.compact .content > a {
+  margin-block-start: auto;
+  margin-inline-start: calc(-1 * var(--space-4));
+}

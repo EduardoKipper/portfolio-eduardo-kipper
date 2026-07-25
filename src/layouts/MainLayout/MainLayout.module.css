@@ -13,6 +13,10 @@
   margin-inline: auto;
 }
 
+.main:focus {
+  outline: none;
+}
+
 .skipLink {
   position: fixed;
   z-index: 10;
